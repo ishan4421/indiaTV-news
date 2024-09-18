@@ -1,0 +1,10 @@
+sqoop import --connect jdbc:mysql://<public dns>:<port>/<database name> \
+--table indiatv \
+--username indiatv password indiatv123 \
+--target-dir /user/root/indiaTV \
+-m 2
+
+
+#move from root to livy 
+
+hdfs -dfs -mv /user/root/indiaTV.txt /user/livy/
